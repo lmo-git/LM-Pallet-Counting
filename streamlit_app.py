@@ -24,8 +24,8 @@ if pallet_image_file:
     pallet_image = Image.open(pallet_image_file)
 
     # Save the image temporarily
-    temp_image_path = "pallet_temp.jpg"
-    pallet_image.save(temp_image_path)
+    temp_image = "pallet_temp.jpg"
+    pallet_image.save(temp_image)
 
     # --- Step 4: Pallet Detection using Inference SDK ---
     st.subheader("Pallet Detection Inference")
@@ -39,7 +39,7 @@ if pallet_image_file:
         )
 
         # Perform inference on the pallet image
-        result = CLIENT.infer(temp_image_path, model_id="pallets-5zqoh/1")
+        result = CLIENT.infer(temp_image, model_id="pallets-5zqoh/1")
 
         # Extract predictions and count the number of detected pallets
         predictions = result.get("predictions", [])
