@@ -1,8 +1,8 @@
 streamlit
 pillow
-pytesseract 
-roboflow 
-gspread 
+pytesseract
+roboflow
+gspread
 google-auth
 inference-sdk
 google-api-python-client
