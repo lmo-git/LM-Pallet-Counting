@@ -39,7 +39,7 @@ if pallet_image_file:
         )
 
         # Perform inference on the pallet image
-        result = CLIENT.infer(temp_image_path, model_id="pallet-detection-measurement/1")
+        result = CLIENT.infer(temp_image_path, model_id="pallets-5zqoh/1")
 
         # Extract predictions and count the number of detected pallets
         predictions = result.get("predictions", [])
