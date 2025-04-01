@@ -35,7 +35,7 @@ if pallet_image_file:
         # Initialize the client with your API details
         CLIENT = InferenceHTTPClient(
             api_url="https://detect.roboflow.com",
-            api_key="WtsFf6wpMhlX16yRNb6e"
+            api_key="E0cabc1PuoP8wIdj63VF"
         )
 
         # Perform inference on the pallet image
