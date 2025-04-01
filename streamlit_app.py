@@ -103,7 +103,7 @@ if st.button("Confirm and Save Data"):
         file_name += ".jpg"
 
         # Upload the image file to Google Drive within the specified folder
-        media = MediaFileUpload(temp_image_path, mimetype='image/jpeg')
+        media = MediaFileUpload(temp_image, mimetype='image/jpeg')
         file_metadata = {
             'name': file_name,
             'parents': [folder_id]
