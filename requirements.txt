@@ -6,3 +6,4 @@ gspread
 google-auth
 inference-sdk
 google-api-python-client
+opencv-python-headless
