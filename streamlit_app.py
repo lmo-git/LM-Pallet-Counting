@@ -24,7 +24,7 @@ if pallet_image_file:
     pallet_image = Image.open(pallet_image_file)
 
     # Save the image temporarily
-    temp_image = "pallet_temp.jpg"
+    temp_image = "pallet.jpg"
     pallet_image.save(temp_image)
 
     # --- Step 4: Pallet Detection using Inference SDK ---
