@@ -24,8 +24,8 @@ if pallet_image_file:
     pallet_image = Image.open(pallet_image_file)
 
     # Save the image temporarily
-    temp_image = "pallet.jpg"
-    pallet_image.save(temp_image)
+    temp_image_path = "pallet_temp.jpg"
+    pallet_image.save(temp_image_path)
 
     # --- Step 4: Pallet Detection using Inference SDK ---
     st.subheader("Pallet Detection Inference")
@@ -35,11 +35,11 @@ if pallet_image_file:
         # Initialize the client with your API details
         CLIENT = InferenceHTTPClient(
             api_url="https://detect.roboflow.com",
-            api_key="E0cabc1PuoP8wIdj63VF"
+            api_key="WtsFf6wpMhlX16yRNb6e"
         )
 
         # Perform inference on the pallet image
-        result = CLIENT.infer(temp_image, model_id="pallets-5zqoh/1")
+        result = CLIENT.infer(temp_image_path, model_id="pallet-detection-measurement/1")
 
         # Extract predictions and count the number of detected pallets
         predictions = result.get("predictions", [])
@@ -103,7 +103,7 @@ if st.button("Confirm and Save Data"):
         file_name += ".jpg"
 
         # Upload the image file to Google Drive within the specified folder
-        media = MediaFileUpload(temp_image, mimetype='image/jpeg')
+        media = MediaFileUpload(temp_image_path, mimetype='image/jpeg')
         file_metadata = {
             'name': file_name,
             'parents': [folder_id]
