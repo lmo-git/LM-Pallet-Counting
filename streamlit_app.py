@@ -10,11 +10,11 @@ from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
 
 # Set the title of the application
-st.title("📄 Document OCR & Pallet Detection App")
+st.title("📄 โปรแกรมการนับพาเลทด้วย AI")
 
 # --- Step 1: Capture document photo ---
-st.subheader("Document OCR")
-ocr_text = st.text_input("Enter document reference (e.g., PT123456)")
+st.subheader("เลขที่เอกสารใบคุมพาเลท")
+ocr_text = st.text_input("โปรดระบุเลขที่เอกสารโดยไม่ต้องระบุ PT เช่น 1234 เป็นต้น")
 
 # --- Step 3: Capture pallet photo ---
 st.subheader("Pallet Detection")
@@ -47,8 +47,8 @@ if pallet_image_file:
         detected_count = 0  # Fallback if detection fails
 
 # --- Step 5: User input for number of pallets ---
-st.subheader("Confirm Pallet Count")
-pallet_count_str = st.text_input("Enter the number of pallets", value=str(detected_count))
+st.subheader("Confirm จำนวนพาเลท")
+pallet_count_str = st.text_input("โปรดระบุจำนวนพาเลท", value=str(detected_count))
 try:
     pallet_count = int(pallet_count_str)
 except ValueError:
