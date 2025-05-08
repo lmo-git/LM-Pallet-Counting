@@ -97,9 +97,9 @@ if st.button("Confirm and Save Data"):
         file_link = f"https://drive.google.com/file/d/{uploaded_file_id}/view?usp=sharing"
 
         timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        row = [timestamp, ocr_text, pallet_count, file_link]
+        row = [timestamp, ocr_text, pallet_count, file_link,detected_count]
         sheet.append_row(row)
-        st.success("Data successfully saved to Google Drive & Google Sheets!")
+        st.success("บันทึกข้อมูลสำเร็จ!")
 
     except Exception as e:
         st.error(f"Failed to save data: {e}")
